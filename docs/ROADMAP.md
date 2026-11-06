@@ -561,6 +561,12 @@ Owner: open · Status: in progress
       discovery, MCP-only tool restrictions, model selection and fresh read-only questions;
       unit tests and CLI 1.0.105 with an isolated home and loopback model, all five access modes
       — claimed: qu-gg, branch `feature/r2.2-copilot-integration` (recorded during PR preparation)
+- [x] DeepSeek Harness through its bundled ACP profile (`dsh --profile acp`), ACP-only and
+      started through the backend's `command`; one agent process per chat or build with our MCP
+      server, with registration/ACP-argument tests and a live headless build (a static page
+      reached Ready with one check pass)
+- [ ] Verify DeepSeek Harness through the desktop app and on Windows and Linux; only its
+      headless CLI on macOS arm64 is verified
 - [x] Review hardening: cap target handoff at 128 while preserving the active target; propagate
       context-discovery cancellation, normalize CLI-only efforts for Claude requests, and name
       the configured agent in shared picker warnings, with focused regressions and translations

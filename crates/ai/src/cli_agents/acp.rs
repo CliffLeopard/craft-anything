@@ -31,6 +31,7 @@ pub const ACP_AGENTS: &[(&str, &[&str])] = &[
     ("hermes", &["acp"]),
     ("maki", &["acp"]),
     ("copilot", &["--acp", "--stdio"]),
+    ("dsh", &["--profile", "acp"]),
 ];
 
 /// Agents whose ACP mode takes the backend's model (`cli_model`), and the flag after the ACP
@@ -834,6 +835,11 @@ mod tests {
     fn copilot_uses_stdio_acp() {
         assert_eq!(acp_args("copilot"), Some(["--acp", "--stdio"].as_slice()));
         assert!(acp_args("unknown-agent").is_none());
+    }
+
+    #[test]
+    fn dsh_starts_its_bundled_acp_profile() {
+        assert_eq!(acp_args("dsh"), Some(["--profile", "acp"].as_slice()));
     }
 
     #[test]
